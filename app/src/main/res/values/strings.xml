@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PhonesBrand</string>
+    <string name="samsung">Samsung</string>
+    <string name="iphone">IPhone</string>
 </resources>
