@@ -2,6 +2,8 @@ package com.example.phonesbrand.ui.model
 
 import com.example.phonesbrand.R
 import com.example.phonesbrand.domain.model.PhonesDomainModel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 
 fun PhonesDomainModel.toUiModel() = PhoneUiModel(
     phoneType = this.phoneType,
@@ -9,7 +11,7 @@ fun PhonesDomainModel.toUiModel() = PhoneUiModel(
 )
 
 fun mapFirstLitterToBrandName(firstLetter: String): Int? {
-   return when (firstLetter) {
+    return when (firstLetter) {
         BrandCategory.Samsung.firstChar -> R.string.samsung
         BrandCategory.IPhone.firstChar -> R.string.iphone
         else -> null

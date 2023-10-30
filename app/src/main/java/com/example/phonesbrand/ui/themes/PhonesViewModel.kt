@@ -9,12 +9,14 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+
 class PhonesViewModel(val phonesUseCase: PhonesUseCase) : ViewModel() {
     private val _phonesType: MutableStateFlow<PhoneUiModel?> = MutableStateFlow(null)
     public val phoneType: StateFlow<PhoneUiModel?> = _phonesType
     fun getPhoneType() {
         viewModelScope.launch {
             _phonesType.value = phonesUseCase.getPhoneTypeUseCase().toUiModel()
+
         }
     }
 }
