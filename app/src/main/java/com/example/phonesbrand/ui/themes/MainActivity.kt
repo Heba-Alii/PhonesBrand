@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private val phonesViewModel: PhonesViewModel by lazy {
-        (application as PhonesApplication).dependencContainer.phonesViewModelFactory.create(
+        (application as PhonesApplication).dependencyContainer.phonesViewModelFactory.create(
             PhonesViewModel::class.java
         )
     }
