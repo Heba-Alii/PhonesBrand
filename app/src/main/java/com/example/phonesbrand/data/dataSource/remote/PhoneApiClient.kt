@@ -2,13 +2,16 @@ package com.example.phonesbrand.data.dataSource.remote
 
 import com.example.phonesbrand.data.model.PhonesResponse
 import kotlinx.coroutines.delay
+import retrofit2.Retrofit
 
 class PhoneApiClient : PhonesRemoteSource {
     override suspend fun getAllPhones(): PhonesResponse {
-        delay(2000)
-        val phoneType =
-            PhonesResponse("IPhone15", "I")
-
+        val phoneType = PhonesResponse("s", "samsung")
         return phoneType
+    }
+
+    companion object {
+        val retrofit = Retrofit.Builder().baseUrl("").build()
+        val apiService = retrofit.create(PhonesRemoteSource::class.java)
     }
 }

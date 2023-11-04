@@ -1,20 +1,23 @@
 package com.example.phonesbrand.ui.themes
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.phonesbrand.databinding.ActivityMainBinding
-import com.example.phonesbrand.PhonesApplication
 import kotlinx.coroutines.launch
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private val phonesViewModel: PhonesViewModel by lazy {
-        (application as PhonesApplication).dependencyContainer.phonesViewModelFactory.create(
-            PhonesViewModel::class.java
-        )
-    }
 
+    //View Model Factory (Manual DI)
+    //    private val phonesViewModel: PhonesViewModel by lazy {
+//        (application as PhonesApplication).dependencyContainer.phonesViewModelFactory.create(
+//            PhonesViewModel::class.java
+//        )
+//    }
+    // inject ViewModel
+    private val phonesViewModel: PhonesViewModel by inject()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
