@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         phonesViewModel.getPhoneType()
         lifecycleScope.launch {
             phonesViewModel.phoneType.collect {
-                binding.phones.text = it?.phoneType
+                binding.phones.text = it?.brand.toString()
             }
 
         }

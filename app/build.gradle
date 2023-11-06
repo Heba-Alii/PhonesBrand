@@ -56,7 +56,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     //hilt
-    implementation "com.google.dagger:hilt-android:2.44"
+    implementation "com.google.dagger:hilt-android:2.44.2"
     kapt "com.google.dagger:hilt-android-compiler:2.44"
     //ViewModel
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
@@ -69,13 +69,12 @@ dependencies {
     //multidex
     implementation("androidx.multidex:multidex:2.0.1")
     //Koin
-    implementation "io.insert-koin:koin-core:3.1.4"
-    implementation "io.insert-koin:koin-android:3.1.4"
-    implementation "org.koin:koin-android-viewmodel:3.1.4"
+    implementation "io.insert-koin:koin-androidx-viewmodel:3.2.0" // Use the latest version
+    implementation "io.insert-koin:koin-androidx-scope:3.2.0"
+    implementation "io.insert-koin:koin-androidx-fragment:3.2.0"
     //Room
     implementation 'android.arch.persistence.room:runtime:1.1.1'
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
-
 
 
 }

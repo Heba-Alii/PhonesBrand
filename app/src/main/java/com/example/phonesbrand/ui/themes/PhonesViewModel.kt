@@ -15,8 +15,10 @@ class PhonesViewModel(val phonesUseCase: PhonesUseCase) : ViewModel() {
     public val phoneType: StateFlow<PhoneUiModel?> = _phonesType
     fun getPhoneType() {
         viewModelScope.launch {
-            _phonesType.value = phonesUseCase.getPhoneTypeUseCase().toUiModel()
-
+            //_phonesType.value = phonesUseCase.getPhoneTypeUseCase().toUiModel()
+            phonesUseCase.getPhoneTypeUseCase().collect() {
+                _phonesType.emit(it.toUiModel())
+            }
         }
     }
 }
